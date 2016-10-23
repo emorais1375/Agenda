@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import br.com.alura.agenda.dao.AlunoDAO;
 import br.com.alura.agenda.modelo.Aluno;
 
 public class FormularioActivity extends AppCompatActivity {
@@ -31,9 +32,12 @@ public class FormularioActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_formulario_ok:
-
                 Aluno aluno = helper.pegaAluno();
-                Toast.makeText(this,"Aluno "+aluno.getNome()+" salvo!",Toast.LENGTH_SHORT).show();
+                AlunoDAO dao = new AlunoDAO(this);
+                dao.insere(aluno);
+                dao.close();
+
+                Toast.makeText(this, "Aluno " + aluno.getNome() + "salvo!",Toast.LENGTH_SHORT).show();
 
                 finish();
                 break;

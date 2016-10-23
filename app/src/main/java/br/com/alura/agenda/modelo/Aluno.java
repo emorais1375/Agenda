@@ -1,7 +1,7 @@
 package br.com.alura.agenda.modelo;
 
 /**
- * Created by emorais on 20/10/16.
+ * Criado por emorais em 20/10/16.
  */
 public class Aluno {
     private long id;
@@ -57,5 +57,10 @@ public class Aluno {
 
     public void setNota(Double nota) {
         this.nota = nota;
+    }
+
+    @Override
+    public String toString() {
+        return getId() + " - " + getNome();
     }
 }
