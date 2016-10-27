@@ -11,7 +11,9 @@ import br.com.alura.agenda.dao.AlunoDAO;
 import br.com.alura.agenda.modelo.Aluno;
 
 public class FormularioActivity extends AppCompatActivity {
+
     private FormularioHelper helper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +39,7 @@ public class FormularioActivity extends AppCompatActivity {
                 dao.insere(aluno);
                 dao.close();
 
-                Toast.makeText(this, "Aluno " + aluno.getNome() + "salvo!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Aluno " + aluno.getNome() + " salvo!",Toast.LENGTH_SHORT).show();
 
                 finish();
                 break;
